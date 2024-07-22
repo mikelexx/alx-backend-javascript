@@ -11,6 +11,7 @@ Read or watch:
 [Arrow functions](https://intranet.alxswe.com/rltoken/N2WLylppCtkkX3YFFtyUHw)
 [Default parameters](https://intranet.alxswe.com/rltoken/kbw9gMO6sdeOKAY23SYVgA)
 [Javascript ES6 — Iterables and Iterators](https://intranet.alxswe.com/rltoken/k4hZsX3vRfX2FkAithvjoA)
+[shorthand syntax for object property value](https://www.geeksforgeeks.org/shorthand-syntax-for-object-property-value-in-es6/)
 
 **Learning Objectives**
 

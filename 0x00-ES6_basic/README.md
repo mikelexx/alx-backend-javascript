@@ -4,14 +4,15 @@ For this project, we expect you to look at these concepts:
 - [Software Linter](https://intranet.alxswe.com/concepts/542)
 [arrow function meme](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2019/12/08806026ef621f900121.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20240722%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240722T031024Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=41c9058a8ab30ce2e0d1ebe4d96d2f98fb08fe3f29f815b78dbee89e2f2ebc2c)
 Resources
+
 Read or watch:
 
-[ECMAScript 6 - ECMAScript 2015](https://intranet.alxswe.com/rltoken/NW1dFLFExQ12_hD8yvkV3A)
-[Statements and declarations](https://intranet.alxswe.com/rltoken/sroRUsUvOZV28V99MHDenw)
-[Arrow functions](https://intranet.alxswe.com/rltoken/N2WLylppCtkkX3YFFtyUHw)
-[Default parameters](https://intranet.alxswe.com/rltoken/kbw9gMO6sdeOKAY23SYVgA)
-[Javascript ES6 — Iterables and Iterators](https://intranet.alxswe.com/rltoken/k4hZsX3vRfX2FkAithvjoA)
-[es6 object initialization & its shorthands](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer)
+- [ECMAScript 6 - ECMAScript 2015](https://intranet.alxswe.com/rltoken/NW1dFLFExQ12_hD8yvkV3A)
+- [Statements and declarations](https://intranet.alxswe.com/rltoken/sroRUsUvOZV28V99MHDenw)
+- [Arrow functions](https://intranet.alxswe.com/rltoken/N2WLylppCtkkX3YFFtyUHw)
+- [Default parameters](https://intranet.alxswe.com/rltoken/kbw9gMO6sdeOKAY23SYVgA)
+- [Javascript ES6 — Iterables and Iterators](https://intranet.alxswe.com/rltoken/k4hZsX3vRfX2FkAithvjoA)
+- [es6 object initialization & its shorthands](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer)
 
 **Learning Objectives**
 
@@ -46,8 +47,10 @@ $ npm -v
 6.11.3
 ```
 ***Install Jest, Babel, and ESLint***
+
 in your project directory, install Jest, Babel and ESList by using the supplied `package.json` and run `npm install`.
 **Configuration files**
+
 Add the files below to your project directory
 
 `package.json`
@@ -133,7 +136,9 @@ Don’t forget to run `npm install` from the terminal of your project folder to 
 **TASKS**
 
 *0. Const or let?*
+
 modify
+
 - function `taskFirst` to instantiate variables using const
 - function `taskNext` to instantiate variables using let
 ```
@@ -168,7 +173,9 @@ bob@dylan:~$
 File: `0-constant.js`
 
 **1. Block Scope**
+
 mandatory
+
 Given what you’ve read about `var` and hoisting, modify the variables inside the function `taskBlock` so that the variables aren’t overwritten inside the conditional block.
 ```
 export default function taskBlock(trueOrFalse) {
@@ -199,7 +206,9 @@ bob@dylan:~$
 File: `1-block-scoped.js`
 
 **2. Arrow functions**
+
 mandatory
+
 Rewrite the following standard function to use ES6’s arrow syntax of the function `add` (it will be an anonymous function after)
 ```
 export default function getNeighborhoodsList() {
@@ -228,7 +237,9 @@ bob@dylan:~$
 File: `2-arrow.js`
 
 **3. Parameter defaults**
+
 mandatory
+
 Condense the internals of the following function to 1 line - without changing the name of each function/variable.
 
 Hint: The key here to define default parameter values for the function parameters.
@@ -263,7 +274,9 @@ Repo:
 File: `3-default-parameter.js`
 
 **4. Rest parameter syntax for functions**
+
 mandatory
+
 Modify the following function to return the number of arguments passed to it using the rest parameter syntax
 ```
 export default function returnHowManyArguments() {
@@ -293,7 +306,9 @@ bob@dylan:~$
 File: `4-rest-parameter.js`
 
 **5. The wonders of spread syntax**
+
 mandatory
+
 Using spread syntax, concatenate 2 arrays and each character of a string by modifying the function below. Your function body should be one line long.
 ```
 export default function concatArrays(array1, array2, string) {
@@ -319,7 +334,9 @@ Repo:
 File: `5-spread-operator.js`
 
 **6. Take advantage of template literals**
+
 mandatory
+
 Rewrite the return statement to use a template literal so you can the substitute the variables you’ve defined.
 ```
 export default function getSanFranciscoDescription() {
@@ -350,7 +367,9 @@ bob@dylan:~$
 File: `6-string-interpolation.js`
 
 **7. Object property value shorthand syntax**
+
 mandatory
+
 Notice how the keys and the variable names are the same?
 
 Modify the following function’s `budget` object to simply use the keyname instead.
@@ -380,7 +399,9 @@ bob@dylan:~$
 File: `7-getBudgetObject.js`
 
 8. No need to create empty objects before adding in properties
+
 mandatory
+
 Rewrite the `getBudgetForCurrentYear` function to use ES6 computed property names on the `budget` object
 ```
 function getCurrentYear() {
@@ -413,7 +434,9 @@ bob@dylan:~$
 File: `8-getBudgetCurrentYear.js`
 
 **9. ES6 method properties**
+
 mandatory
+
 Rewrite `getFullBudgetObject` to use ES6 method properties in the `fullBudget` object
 ```
 import getBudgetObject from './7-getBudgetObject.js';
@@ -452,7 +475,9 @@ bob@dylan:~$
 File: `9-getFullBudget.js`
 
 10. For...of Loops
+
 mandatory
+
 Rewrite the function `appendToEachArrayValue` to use ES6’s `for...of` operator. And don’t forget that `var` is not ES6-friendly.
 ```
 export default function appendToEachArrayValue(array, appendString) {
@@ -479,7 +504,9 @@ bob@dylan:~$
 File: `10-loops.js`
 
 11. Iterator
+
 mandatory
+
 Write a function named createEmployeesObject that will receive two arguments:
 
 - `departmentName` (String)
@@ -512,7 +539,9 @@ bob@dylan:~$
 File: `11-createEmployeesObject.js`
 
 **12. Let's create a report object**
+
 mandatory
+
 Write a function named `createReportObject` whose parameter, `employeesList`, is the return value of the previous function `createEmployeesObject`.
 ```
 export default function createReportObject(employeesList) {
@@ -558,7 +587,9 @@ bob@dylan:~$
 File: `12-createReportObject.js`
 
 **13. Iterating through report objects**
+
 #advanced
+
 Write a function named `createIteratorObject`, that will take into argument a report Object created with the previous function `createReportObject`.
 
 This function will return an iterator to go through every employee in every department.
@@ -598,7 +629,9 @@ bob@dylan:~$
 File: `100-createIteratorObject.js`
 
 **14. Iterate through object**
+
 #advanced
+
 Finally, write a function named `iterateThroughObject`. The function’s parameter `reportWithIterator` is the return value from `createIteratorObject`.
 ```
  export default function iterateThroughObject(reportWithIterator) {

@@ -19,17 +19,18 @@ At the end of this project, you are expected to be able to explain to anyone, wi
 **Install NodeJS 12.11.x**
 
 (in your home directory)
-	```
+
+```
 	curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh
 sudo bash nodesource_setup.sh
 sudo apt install nodejs -y
-	```
-	```
+```
+```
 	$ nodejs -v
 v12.11.1
 $ npm -v
 6.11.3
-	```
+```
 **Install Jest, Babel, and ESLint**
 
 in your project directory, install Jest, Babel and ESList by using the supplied `package.json` and run `npm install`.
@@ -38,6 +39,7 @@ in your project directory, install Jest, Babel and ESList by using the supplied 
 Add the below to your project directory
 
 `package.json`
+
 ```
 
 {
@@ -124,17 +126,18 @@ module.exports = {
 Don't forget to run `$ npm install` when you have the `package.json`
 
 **Tasks**
-
-0. You used to attend a place like this at some point
+### 0\. You used to attend a place like this at some point
 
 mandatory
 
-Implement a class named `ClassRoom:` 
 
-	- Prototype:`export default class ClassRoom` 
-	- It should accept one attribute named `maxStudentsSize` (Number) and assigned to `_maxStudentsSize` 
-	```
-	bob@dylan:~$ cat 0-main.js
+Implement a class named `ClassRoom`:
+
+- Prototype: `export default class ClassRoom`
+- It should accept one attribute named `maxStudentsSize` (Number) and assigned to `_maxStudentsSize`
+
+```
+bob@dylan:~$ cat 0-main.js
 import ClassRoom from "./0-classroom.js";
 
 const room = new ClassRoom(10);
@@ -144,16 +147,19 @@ bob@dylan:~$
 bob@dylan:~$ npm run dev 0-main.js
 10
 bob@dylan:~$
-	```
-file: `0-classroom.js`
 
-	1. Let's make some classrooms
+```
+- File: `0-classroom.js`
+
+### 1\. Let's make some classrooms
 
 mandatory
 
-Import the `ClassRoom` class from `0-classroom.js.` 
 
-Implement a function named `initializeRooms.` It should return an array of 3 `ClassRoom` objects with the sizes 19, 20, and 34 (in this order).
+Import the `ClassRoom` class from `0-classroom.js`.
+
+Implement a function named `initializeRooms`. It should return an array of 3 `ClassRoom` objects with the sizes 19, 20, and 34 (in this order).
+
 ```
 bob@dylan:~$ cat 1-main.js
 import initializeRooms from './1-make_classrooms.js';
@@ -168,22 +174,28 @@ bob@dylan:~$ npm run dev 1-main.js
   ClassRoom { _maxStudentsSize: 34 }
 ]
 bob@dylan:~$
+
 ```
-file: ` 1-make_classrooms.js`
 
-2. A Course, Getters, and Setters
+- File: `1-make_classrooms.js`
+
+### 2\. A Course, Getters, and Setters
+
 mandatory
-Implement a class named HolbertonCourse:
 
-	- Constructor attributes:
-		- `name` (String)
-		- `length` (Number)
-		- `students` (array of Strings)
-	- Make sure to verify the type of attributes during object creation
-	- Each attribute must be stored in an “underscore” attribute version (ex: `name` is stored in `_name`)
-	- Implement a getter and setter for each attribute.
-	```
-	bob@dylan:~$ cat 2-main.js
+
+Implement a class named `HolbertonCourse`:
+
+- Constructor attributes:
+  - `name` (String)
+  - `length` (Number)
+  - `students` (array of Strings)
+- Make sure to verify the type of attributes during object creation
+- Each attribute must be stored in an "underscore" attribute version (ex: `name` is stored in `_name`)
+- Implement a getter and setter for each attribute.
+
+```
+bob@dylan:~$ cat 2-main.js
 import HolbertonCourse from "./2-hbtn_course.js";
 
 const c1 = new HolbertonCourse("ES6", 1, ["Bob", "Jane"])
@@ -218,21 +230,26 @@ TypeError: Name must be a string
 TypeError: Length must be a number
     ...
 bob@dylan:~$
-	```
-	file: `2-hbtn_course.js`
 
-3. Methods, static methods, computed methods names..... MONEY
+```
+
+- File: `2-hbtn_course.js`
+
+
+### 3\. Methods, static methods, computed methods names..... MONEY
 
 mandatory
 
-Implement a class named Currency:
 
-- Constructor attributes:
-	- `code` (String)
-	- `name` (String)
-- Each attribute must be stored in an “underscore” attribute version (ex: `name` is stored in `_name`)
+Implement a class named `Currency`:
+
+- - Constructor attributes:
+- `code` (String)
+- `name` (String)
+- Each attribute must be stored in an "underscore" attribute version (ex: `name` is stored in `_name`)
 - Implement a getter and setter for each attribute.
-- Implement a method named `displayFullCurrency` that will return the attributes in the following format `name (code).`
+- Implement a method named `displayFullCurrency` that will return the attributes in the following format `name (code)`.
+
 ```
 bob@dylan:~$ cat 3-main.js
 import Currency from "./3-currency.js";
@@ -244,10 +261,12 @@ bob@dylan:~$
 bob@dylan:~$ npm run dev 3-main.js
 Dollars ($)
 bob@dylan:~$
-```
-File: `3-currency.js`
 
-4. Pricing
+```
+
+- File: `3-currency.js`
+
+### 4\. Pricing
 
 mandatory
 
@@ -255,13 +274,14 @@ Import the class `Currency` from `3-currency.js`
 
 Implement a class named `Pricing`:
 
-Constructor attributes:
-`amount` (Number)
-`currency` (Currency)
-Each attribute must be stored in an “underscore” attribute version (ex: `name` is stored in `_name`)
-Implement a getter and setter for each attribute.
-Implement a method named `displayFullPrice` that returns the attributes in the following format `amount currency_name (currency_code).` 
-Implement a static method named convertPrice. It should accept two arguments: `amount` (Number), `conversionRate` (Number). The function should return the amount multiplied by the conversion rate.
+- Constructor attributes:
+  - `amount` (Number)
+  - `currency` (Currency)
+- Each attribute must be stored in an "underscore" attribute version (ex: `name` is stored in `_name`)
+- Implement a getter and setter for each attribute.
+- Implement a method named `displayFullPrice` that returns the attributes in the following format `amount currency_name (currency_code)`.
+- Implement a static method named `convertPrice`. It should accept two arguments: `amount` (Number), `conversionRate` (Number). The function should return the amount multiplied by the conversion rate.
+
 ```
 bob@dylan:~$ cat 4-main.js
 import Pricing from './4-pricing.js';
@@ -279,8 +299,12 @@ Pricing {
 }
 100 Euro (EUR)
 bob@dylan:~$
+
 ```
-file: `4-pricing.js`
+
+- File: `4-pricing.js`
+
+ Done? Help Check your code Ask for a new correction G
 
 5. A Building
 
@@ -354,8 +378,6 @@ bob@dylan:~$
 
 - File: `6-sky_high.js`
 
- Done? Help Check your code Ask for a new correction Get a sandbox QA Review
-
 ### 7\. Airport
 
 mandatory
@@ -385,8 +407,6 @@ bob@dylan:~$
 ```
 
 - File: `7-airport.js`
-
- Done? Help Check your code Ask for a new correction Get a sandbox QA Review
 
 ### 8\. Primitive - Holberton Class
 
@@ -419,7 +439,7 @@ bob@dylan:~$
 
 - File: `8-hbtn_class.js`
 
- Done? Help Check your code Ask for a new correction Get a sandbox QA Review
+ g
 
 ### 9\. Hoisting
 
@@ -532,7 +552,7 @@ bob@dylan:~$
 
 - File: `9-hoisting.js`
 
- Done? Help Check your code Ask for a new correction Get a sandbox QA Review
+ g
 
 ### 10\. Vroom
 
@@ -579,7 +599,6 @@ bob@dylan:~$
 ```
 - File: `10-car.js`
 
- Done? Help Check your code Ask for a new correction Get a sandbox QA Review
 
 ### 11\. EVCar
 

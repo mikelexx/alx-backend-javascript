@@ -3,14 +3,12 @@ export default function cleanSet(set, startString) {
   if (!(set instanceof Set)) throw Error();
   let res = '';
   set.forEach((val) => {
-    const valStart = val.slice(0, startString.length);
-    if (valStart === startString && startString.length > 0) {
-      const rest = val.slice(valStart.length);
+    if (val.startsWith(startString) && startString.length > 0) {
+      const rest = val.slice(startString.length);
       if (res.length > 0) {
-        res += '-';
-        res += rest;
+        res = res.concat('-', rest);
       } else {
-        res += rest;
+        res = rest;
       }
     }
   });

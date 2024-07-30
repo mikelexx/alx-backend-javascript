@@ -1,4 +1,8 @@
-export default function updateStudentGradeByCity(studentsList, city, newGrades) {
+import getListStudents from './0-get_list_students';
+
+export default function updateStudentGradeByCity(
+  studentsList = getListStudents(), city, newGrades,
+) {
   if (!(studentsList instanceof Array)) throw Error();
   if (!(newGrades instanceof Array)) throw Error();
   if (typeof city !== 'string') throw Error();

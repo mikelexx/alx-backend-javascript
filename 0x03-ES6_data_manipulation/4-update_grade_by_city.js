@@ -6,19 +6,10 @@ export default function updateStudentGradeByCity(
   if (!(studentsList instanceof Array)) throw Error();
   if (!(newGrades instanceof Array)) throw Error();
   if (typeof city !== 'string') throw Error();
-  const updatedStudents = studentsList.filter((student) => {
-    let found = false;
-    newGrades.map((gradeObj) => {
-      if (gradeObj.studentId === student.id) {
-        found = true;
-        Object.defineProperty(student, 'grade', { value: gradeObj.grade, writable: true, enumerable: true });
-      }
-      return student;
-    });
-    if (!found) {
-      Object.defineProperty(student, 'grade', { value: 'N/A', writable: true, enumerable: true });
-    }
-    return student.location === city;
+
+  return studentsList.filter((student) => student.location === city).map((stud) => {
+    const gradeObj = newGrades.filter((grade) => grade.studentId === stud.id);
+    const updatedStud = { ...stud, grade: gradeObj.length > 0 ? gradeObj[0].grade : 'N/A' };
+    return updatedStud;
   });
-  return updatedStudents;
 }

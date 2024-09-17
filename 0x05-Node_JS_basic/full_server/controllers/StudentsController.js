@@ -3,8 +3,8 @@ import readDatabase from '../utils';
 export default class StudentsController {
   static async getAllStudents(request, response) {
     const { dbPath } = request.app.locals;
-    response.write('This is the list of our students');
     try {
+      response.write('This is the list of our students');
       const data = await readDatabase(dbPath);
       for (const key of Object.keys(data).sort((keyV) => keyV.toLowerCase())) {
         response.write(`\nNumber of students in ${key}: ${data[key].length}. List: ${data[key].join(', ')}`);

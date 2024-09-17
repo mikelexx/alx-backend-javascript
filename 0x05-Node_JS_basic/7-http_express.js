@@ -34,3 +34,4 @@ app.get('/students', (_, res) => {
     res.end();
   });
 });
+module.exports = app;

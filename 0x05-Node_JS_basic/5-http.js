@@ -11,11 +11,11 @@ const app = http.createServer((req, res) => {
   }
   if (url === '/students') {
     fs.readFile(path, { encoding: 'utf-8' }, (err, data) => {
+      res.write('This is the list of our students\n');
       if (err) {
         res.end('Cannot load the database');
         return;
       }
-      res.write('This is the list of our students\n');
       const students = data.split('\n').slice(1, -1);
       const fields = {};
       res.write(`Number of students: ${students.length}`);

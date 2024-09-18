@@ -6,13 +6,14 @@ export default class StudentsController {
     try {
       response.write('This is the list of our students');
       const data = await readDatabase(dbPath);
-      for (const key of Object.keys(data).sort((keyV) => keyV.toLowerCase())) {
+      for (const key of Object.keys(data)
+        .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))) {
         response.write(`\nNumber of students in ${key}: ${data[key].length}. List: ${data[key].join(', ')}`);
       }
     } catch (err) {
-      return response.status(500).end('Cannot load the database');
+      return response.status(500).send('Cannot load the database');
     }
-    return response.status(200).end();
+    return response.status(200).send();
   }
 
   static async getAllStudentsByMajor(request, response) {

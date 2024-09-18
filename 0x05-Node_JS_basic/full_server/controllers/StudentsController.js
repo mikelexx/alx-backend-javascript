@@ -1,19 +1,19 @@
+import process from 'process';
 import readDatabase from '../utils';
 
 export default class StudentsController {
   static async getAllStudents(request, response) {
-    response.write('This is the list of our students');
-    const { dbPath } = request.app.locals;
     try {
-      const data = await readDatabase(dbPath);
+      const data = await readDatabase(process.argv[2].toString());
+      response.write('This is the list of our students');
       for (const key of Object.keys(data)
         .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))) {
         response.write(`\nNumber of students in ${key}: ${data[key].length}. List: ${data[key].join(', ')}`);
       }
+      return response.status(200).send();
     } catch (err) {
       return response.status(500).send('Cannot load the database');
     }
-    return response.status(200).send();
   }
 
   static async getAllStudentsByMajor(request, response) {

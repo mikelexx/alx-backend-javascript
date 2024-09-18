@@ -2,9 +2,9 @@ import readDatabase from '../utils';
 
 export default class StudentsController {
   static async getAllStudents(request, response) {
+    response.write('This is the list of our students');
     const { dbPath } = request.app.locals;
     try {
-      response.write('This is the list of our students');
       const data = await readDatabase(dbPath);
       for (const key of Object.keys(data)
         .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))) {

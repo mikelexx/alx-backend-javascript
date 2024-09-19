@@ -7,8 +7,8 @@ app.get('/', (_, res) => {
   res.send('Welcome to the payment system');
 });
 app.get('/cart/:id', (req, res) => {
-  const id = Number(req.params.id);
-  if (!isNaN(id)) {
+  const id = req.params.id;
+  if (id.match('^[0-9]+$')) {
     res.send(`Payment methods for cart :${id}`);
   } else {
     res.status(404).send();

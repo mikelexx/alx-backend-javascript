@@ -44,7 +44,25 @@ describe('test `/cart/:id` endpoint', function(){
       })
   })
   it('test for status code when `:id` is string mixed with digits', function(done){
+    request('http://localhost:7865/cart/a23a', (err, resp, _)=>{
+      expect(resp.statusCode).to.be.equal(404);
+      done();
+      if(err){
+        done(err);
+      }
+      })
+  })
+  it('test for status code when `:id` is string mixed with digits', function(done){
     request('http://localhost:7865/cart/23a', (err, resp, _)=>{
+      expect(resp.statusCode).to.be.equal(404);
+      done();
+      if(err){
+        done(err);
+      }
+      })
+  })
+  it('test for status code when `:id` is string mixed with digits', function(done){
+    request('http://localhost:7865/cart/a23', (err, resp, _)=>{
       expect(resp.statusCode).to.be.equal(404);
       done();
       if(err){

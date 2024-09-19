@@ -8,7 +8,7 @@ app.get('/', (_, res) => {
 });
 app.get('/cart/:id', (req, res) => {
   const id = req.params.id;
-  if (id.match('^[0-9]+$')) {
+  if (/^[0-9]+$/.test(id)) {
     res.send(`Payment methods for cart :${id}`);
   } else {
     res.status(404).send();

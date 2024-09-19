@@ -6,12 +6,8 @@ app.listen(7865, () => {
 app.get('/', (_, res) => {
   res.send('Welcome to the payment system');
 });
-app.get('/cart/:id', (req, res) => {
+app.get('/cart/:id([0-9]+)', (req, res) => {
   const id = req.params.id;
-  if (/^[0-9]+$/.test(id)) {
-    res.send(`Payment methods for cart :${id}`);
-  } else {
-    res.status(404).send();
-  }
+  res.send(`Payment methods for cart :${id}`);
 });
 module.exports = app;
